@@ -25,8 +25,8 @@ pipeline{
                           
                           
                           bat 'docker login -u %docker_user% -p %docker_pass%'
-                            bat 'docker push balti99/e-commerce_app/php_ecommerce_pipeline_web:latest'
-                           bat 'docker push balti99/e-commerce_app/mysql:latest'
+                            //bat 'docker push balti99/e-commerce_app/php_ecommerce_pipeline_web:latest'
+                           bat 'docker push balti99/e-commerce_app:latest'
                     }
                 }
                 
