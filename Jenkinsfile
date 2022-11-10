@@ -15,7 +15,7 @@
         {
 			 withCredentials([string(credentialsId: 'dockerhub', variable: 'DHPWD')]) 
                 {
-                    bat "docker login -u vardhanns -p ${DHPWD}"
+                    bat "docker login -u balti99 -p ${DHPWD}"
                 }
 			
         }
