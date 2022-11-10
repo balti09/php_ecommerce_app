@@ -13,7 +13,10 @@
         }
         stage('Docker login')
         {
-			bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			 withCredentials([string(credentialsId: 'dockerhub', variable: 'DHPWD')]) 
+                {
+                    bat "docker login -u vardhanns -p ${DHPWD}"
+                }
 			
         }
         stage('PUSH image to Docker Hub')
