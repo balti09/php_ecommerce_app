@@ -22,9 +22,9 @@ pipeline{
             {
                 steps{
                     withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'docker_pass', usernameVariable: 'docker_user')]) {
-                          bat 'echo %docker_user%:${docker_pass}'
                           
-                          bat 'docker login -u ${docker_user} -p ${docker_pass}'
+                          
+                          bat 'docker login -u %docker_user% -p %docker_pass%'
                     }
                 }
                 
