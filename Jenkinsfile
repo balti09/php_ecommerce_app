@@ -23,7 +23,9 @@ pipeline{
             stage('Docker login')
             {
                 steps{
-                    bat 'echo $dockerhub_PSW '
+                    withCredentials([usernameColonPassword(credentialsId: 'dockerhub', variable: '$DHPW')]) {
+                        bat 'docker login -u balti99 -p $DHPW'
+                        }
                 }
                 
             }
