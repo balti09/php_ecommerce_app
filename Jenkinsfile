@@ -34,6 +34,7 @@ pipeline{
         stage('PUSH image to Docker Hub')
             {
                 steps{
+                    bat 'echo ff'
                    // bat 'docker tag mysql:latest balti99/e-commerce_app/mysql:latest'
                    // bat 'docker tag php_ecommerce_pipeline_web:latest balti99/e-commerce_app/php_ecommerce_pipeline_web:latest'
                     //bat 'docker push balti99/e-commerce_app/php_ecommerce_pipeline_web:latest'
