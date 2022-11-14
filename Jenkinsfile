@@ -15,11 +15,9 @@ pipeline{
                 tools {
                     jdk "java" // the name you have given the JDK installation in Global Tool Configuration
                 }
-                environment {
-                    scannerHome = tool 'sonar' // the name you have given the Sonar Scanner (in Global Tool Configuration)
-                }
+                
                 steps{
-                    
+                    def scannerHome = tool 'sonar'
                     withSonarQubeEnv('php-ecommerce') { // If you have configured more than one global server connection, you can specify its name
                         bat "${scannerHome}/sonar-scanner"
                     
