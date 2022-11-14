@@ -21,7 +21,7 @@ pipeline{
                 steps{
                     
                     withSonarQubeEnv('php-ecommerce') { // If you have configured more than one global server connection, you can specify its name
-                        bat "${scannerHome}/sonar-scanner D\"sonar.projectKey=php-ecommerce\""
+                        bat "${scannerHome}/sonar-scanner.bat -D\"sonar.projectKey=php-ecommerce\" -D\"sonar.sources=.\" -D\"sonar.host.url=http://localhost:9000\" -D\"sonar.login=sqp_aeb102fbf94c50e2babfa7d970417ee751b3a60f\""
                     
                 }
                 }
