@@ -21,7 +21,7 @@ pipeline{
                 steps{
                     
                     withSonarQubeEnv('php-ecommerce') { // If you have configured more than one global server connection, you can specify its name
-                    bat 'cd ${scannerHome}'
+                    bat "cd ${scannerHome}"
                     bat 'sonar-scanner.bat'
                 }
                 }
