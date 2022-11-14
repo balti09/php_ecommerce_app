@@ -11,13 +11,6 @@ pipeline{
                 }
             
             }
-            stage('Run Docker Compose File')
-            {
-                steps{
-                    bat 'docker-compose build'
-                    bat 'docker-compose up -d'
-                }
-            }
             stage('SonarQube analysis') {
                 tools {
                     jdk "java" // the name you have given the JDK installation in Global Tool Configuration
@@ -32,6 +25,13 @@ pipeline{
                 }
                 }
                 
+            }
+            stage('Run Docker Compose File')
+            {
+                steps{
+                    bat 'docker-compose build'
+                    bat 'docker-compose up -d'
+                }
             }
             stage('Docker login')
             {
